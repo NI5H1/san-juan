@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Novios - San Juan</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin-top: 10rem;
+    min-height: calc(100vh - 80px);
+    padding: 2rem;
+}
+
+.registry-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.registry-info {
+    padding: 2rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.highlight {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.registry-form {
+    background: #f5f5f5;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(26,35,126,0.1);
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .registry-container {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="" srcset="">
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Nosotros</a></li>
+                <li><a href="index.html">Productos</a></li>
+                <li><a href="index.html">Contacto</a></li>
+                <li><a href="listanovios.html">Lista de Novios</a></li>
+                <li><a href="ventacorporativa.html">Venta Corporativa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="registry-container">
+            <div class="registry-info">
+                <img decoding="async" width="386" height="223" src="https://www.tiendasanjuan.com.ar/wp-content/uploads/2022/07/novios.jpg" class="attachment-large size-large" alt="" loading="lazy" srcset="https://www.tiendasanjuan.com.ar/wp-content/uploads/2022/07/novios.jpg 386w, https://www.tiendasanjuan.com.ar/wp-content/uploads/2022/07/novios-300x173.jpg 300w" sizes="(max-width: 386px) 100vw, 386px">
+                <h1>Lista de Novios</h1>
+                <p class="highlight">Armá tu lista de novios con nosotros.</p>
+                <p>Tus invitados pueden seleccionar regalos de la lista de regalos que elijas u optar por regalarte un voucher por el monto que deseen.</p>
+                <p>Al momento de retirar los regalos podés canjearlos por otros de tu elección. Dejá tus datos y en breve nos comunicaremos con vos para ofrecerte la opción que mejor se adapte a lo que necesitan!</p>
+            </div>
+
+            <div class="registry-form">
+                <form id="registryForm" onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha de Boda</label>
+                            <input type="date" id="fecha" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono de contacto</label>
+                        <input type="tel" id="telefono" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">ENVIAR</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Tienda San Juan</h3>
+                <p>Indumentaria estudiantil, formal y mucho más. Calidad, estilo y comodidad en un solo lugar.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank">
+                        <img src="https://api.iconify.design/lucide:facebook.svg" alt="Facebook">
+                    </a>
+                    <a href="https://instagram.com" target="_blank">
+                        <img src="https://api.iconify.design/lucide:instagram.svg" alt="Instagram">
+                    </a>
+                    <a href="https://twitter.com" target="_blank">
+                        <img src="https://api.iconify.design/lucide:twitter.svg" alt="Twitter">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Tienda San Juan © Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venta Corporativa</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #333;
+  background-color: #f5f6fa;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 7.5rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+}
+
+.sidebar {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  margin-bottom: 1rem;
+}
+
+.menu-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #2c3e50;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.menu-link:hover {
+  background: #e9ecef;
+  color: #1a73e8;
+}
+
+.menu-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease;
+  background: #fff;
+  margin: 0 1rem;
+  border-radius: 4px;
+}
+
+.menu-content.active {
+  max-height: 200px;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.form-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-title {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.1);
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+button {
+  background-color: #1a73e8;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #1557b0;
+  transform: translateY(-1px);
+}
+
+.recaptcha-container {
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+    </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="" srcset="">
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Nosotros</a></li>
+                <li><a href="index.html">Productos</a></li>
+                <li><a href="index.html">Contacto</a></li>
+                <li><a href="listanovios.html">Lista de Novios</a></li>
+                <li><a href="ventacorporativa.html">Venta Corporativa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <div class="container">
+            <aside class="sidebar">
+              <nav>
+                <ul class="menu-list">
+                  <li class="menu-item">
+                    <div class="menu-link">Uniformes</div>
+                    <div class="menu-content">
+                      <p>Línea exclusiva para uniformes masculinos y femeninos.
+
+                        Contamos con gran surtido y variedad de precios y le aseguramos la entrega del producto.
+                        
+                        Disponemos de un servicio de bordado para personalizar uniformes y realizar bordados de logos e identificaciones
+                        
+                        Podemos proveer: Camisas, Pantalones, Trajes, Ambos, Ropa de Trabajo Ombú, Calzado de Seguridad, etc.</p>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-link">Ordenes de Compra al Personal</div>
+                    <div class="menu-content">
+                      <p>Este servicio es ideal para facilitar la entrega de uniformes, permitiendo al personal de su empresa retirarlos directamente en nuestros locales.</p>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-link">Linea Hotelera</div>
+                    <div class="menu-content">
+                      <p>Atención a hoteles, clinicas y hospitales. Disponemos de ropa blanca, toallas y toallones, ropa de cama, frazadas, colchones, sommiers, acolchados, cortinas, barrales y accesorios de baño.</p>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-link">Tarjeta de Regalos</div>
+                    <div class="menu-content">
+                      <p>Son ideales como regalos empresariales para clientes y proveedores o para ser entregados a su personal.</p>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-link">Linea gastronómica</div>
+                    <div class="menu-content">
+                      <p>Equipamiento de cocinas y salones comedores, juegos de porcelana, mantelería, cubiertos, pequeños electrodomésticos, bazar y cristalería</p>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-link">Licitaciones y Concurso de Precios</div>
+                    <div class="menu-content">
+                      <p>Hacemos cotizaciones y ofertas de precio para organizaciones gubernamentales y empresas.</p>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </aside>
+        
+            <main class="form-container">
+              <h1 class="form-title">Venta Corporativa</h1>
+              <form id="corporateForm" onsubmit="return false;">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="company">Nombre de la Empresa</label>
+                    <input type="text" id="company" name="company" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="contact">Persona de Contacto</label>
+                    <input type="text" id="contact" name="contact" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="category">Rubro</label>
+                    <input type="text" id="category" name="category" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="tel" id="phone" name="phone" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                  </div>
+                  
+                  <div class="form-group full-width">
+                    <label for="message">¿En qué podemos ayudar?</label>
+                    <textarea id="message" name="message" required></textarea>
+                  </div>
+                </div>
+        
+                <div class="recaptcha-container">
+                  <div id="recaptcha"></div>
+                </div>
+        
+                <button type="submit">Enviar</button>
+              </form>
+            </main>
+          </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Tienda San Juan</h3>
+                <p>Indumentaria estudiantil, formal y mucho más. Calidad, estilo y comodidad en un solo lugar.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank">
+                        <img src="https://api.iconify.design/lucide:facebook.svg" alt="Facebook">
+                    </a>
+                    <a href="https://instagram.com" target="_blank">
+                        <img src="https://api.iconify.design/lucide:instagram.svg" alt="Instagram">
+                    </a>
+                    <a href="https://twitter.com" target="_blank">
+                        <img src="https://api.iconify.design/lucide:twitter.svg" alt="Twitter">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Tienda San Juan © Todos los derechos reservados</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const menuLinks = document.querySelectorAll(".menu-link");
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+
+            if (content.classList.contains("active")) {
+                content.classList.remove("active");
+            } else {
+                // Cierra otros elementos abiertos antes de abrir uno nuevo
+                document.querySelectorAll(".menu-content").forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                content.classList.add("active");
+            }
+        });
+    });
+});
+    </script>
+  </body>
+</html>
